@@ -22,8 +22,9 @@ const connections=[];
 io.on('connection',(socket)=>{
     console.log("User connected");
 
-    socket.on('join',(data)=>{
-        console.log(data)
+    socket.on('join',({name,room})=>{
+        console.log(name);
+        console.log(room);
     })
 
     socket.on('disconnect',()=>{
