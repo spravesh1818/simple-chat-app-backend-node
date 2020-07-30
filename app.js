@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
         callback();
     })
 
-    socket.on('disconnect', () => {
+    socket.on('disconnect', (callback) => {
         console.log('User disconnected');
         const user = removeUser(socket.id);
         const users = getUsersInRoom(user.room);
